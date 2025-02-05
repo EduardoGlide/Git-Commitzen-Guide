@@ -1,4 +1,4 @@
-import Teste from "../../components/Teste";
+import Input from "../../components/input";
 import "./Register.css";
 import { useState } from "react";
 
@@ -46,20 +46,22 @@ const Register = () => {
                 </div>
                 <form id="form" className="form" onSubmit={handleSubmit}>
                     <div className="form-control">
-                        <Teste
-                            
-                            type="text"
-                            id="email"
-                            placeholder="Digite seu email.."
+                        <Input
+                            label={"Email"}
+                            type={"text"}
+                            id={"email"}
+                            placeholder={"Digite seu email:"}
                             onChange={onEmailChange}
-                        ></Teste>
+                        />
                     </div>
                     <div className="form-control">
-                        <Teste
-                            type="password"
-                            id="password"
-                            placeholder="Digite sua senha..."
-                            onChange={onPasswordChange}></Teste>
+                        <Input
+                            label={"Senha"}
+                            type={"password"}
+                            id={"password"}
+                            placeholder={"Digite sua senha:"}
+                            onChange={onPasswordChange}
+                        />
                     </div>
                     <button type="submit">Cadastro</button>
                 </form>
