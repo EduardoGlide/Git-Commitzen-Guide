@@ -63,6 +63,7 @@ const Register = () => {
                             onChange={onPasswordChange}
                         />
                     </div>
+                    <button onClick={()=> handleSubmit()}>Cadastrar</button>
                 </form>
             </div>
         </>
