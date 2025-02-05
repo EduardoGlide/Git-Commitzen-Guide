@@ -1,3 +1,4 @@
+import Teste from "../../components/Teste";
 import "./Register.css";
 import { useState } from "react";
 
@@ -25,15 +26,14 @@ const Register = () => {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const user = autorizedUsers.find(
-            (user) => user.email != password || user.password !== email
+            (user) => user.email == email || user.password == password
         );
-        console.log(user);
-        if (!user) {
-            alert("Usuário não autorizado.");
-        } else {
+        if (user) {
             alert("Usuário autorizado.");
+        } else {
+            alert("Usuário não autorizado.");
             e.target.reset();
         }
     };
@@ -42,28 +42,26 @@ const Register = () => {
         <>
             <div className="container">
                 <div className="header">
-                    <h2>Entrar</h2>
+                    Cadastro
                 </div>
-                <form id="form" className="form">
+                <form id="form" className="form" onSubmit={handleSubmit}>
                     <div className="form-control">
-                        <label htmlFor="email">Email</label>
-                        <input
+                        <Teste
+                            
                             type="text"
                             id="email"
                             placeholder="Digite seu email.."
                             onChange={onEmailChange}
-                        />
+                        ></Teste>
                     </div>
                     <div className="form-control">
-                        <label htmlFor="password">Senha</label>
-                        <input
+                        <Teste
                             type="password"
                             id="password"
                             placeholder="Digite sua senha..."
-                            onChange={onPasswordChange}
-                        />
+                            onChange={onPasswordChange}></Teste>
                     </div>
-                    <button onClick={()=> handleSubmit()}>Cadastrar</button>
+                    <button type="submit">Cadastro</button>
                 </form>
             </div>
         </>
